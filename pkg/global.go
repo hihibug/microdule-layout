@@ -6,23 +6,25 @@ import (
 	"github.com/hihibug/microdule/core/etcd"
 	"github.com/hihibug/microdule/core/redis"
 	"github.com/hihibug/microdule/core/viper"
+	"github.com/hihibug/microdule/rpc"
 	"github.com/hihibug/microdule/web"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 )
 
 var (
-	Data           *App
 	ProviderGlobal = wire.NewSet(InitGlobal)
 )
 
 type App struct {
-	Srv   microdule.Service
-	Db    *gorm.DB
-	Etcd  etcd.Etcd
-	Log   *zap.Logger
-	Rest  *web.Gin
-	Redis redis.Redis
+	Srv    microdule.Service
+	Db     *gorm.DB
+	Etcd   etcd.Etcd
+	Log    *zap.Logger
+	Rest   *web.Gin
+	Redis  redis.Redis
+	Rpc    *rpc.Grpc
+	Config *viper.Config
 }
 
 type Global struct {

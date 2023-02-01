@@ -14,7 +14,6 @@ func InitService() (*pkg.App, error) {
 		pkg.ProviderRedis,
 		pkg.ProviderDb,
 		pkg.ProviderETCD,
-		pkg.ProviderWeb,
 
 		NewService,
 	)

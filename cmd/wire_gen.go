@@ -20,7 +20,6 @@ func InitService() (*pkg.App, error) {
 	redis := pkg.InitRedis(global)
 	db := pkg.InitOrm(global)
 	etcd := pkg.InitEtcd(global)
-	gin := pkg.InitRest(global)
-	app := NewService(global, redis, db, etcd, gin)
+	app := NewService(global, redis, db, etcd)
 	return app, nil
 }

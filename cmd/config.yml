@@ -9,7 +9,12 @@ rest:
   StaticPath: ""
   TmpPath: ""
   Addr: 8999
-  
+
+# rpc configuration
+rpc:
+  Addr: 18999
+  name: "TestService"
+
 # etcd configuration
 etcd:
   addr: 172.16.102.109:2379,172.16.102.109:2380
@@ -28,7 +33,7 @@ db:
   maxOpenCons: 100
   logMode: info
 
-# mysql connect configuration
+# redis connect configuration
 redis:
   addr: 127.0.0.1:6379
   db: 0
